@@ -1,0 +1,129 @@
+{
+  "project": {
+    "name": "CTF Reverse Challenge Validation",
+    "root": "/home/al/Desktop/challenges",
+    "status": "in_progress"
+  },
+  "progress": {
+    "total": 8,
+    "verified": 8,
+    "remaining": 0
+  },
+  "challenges": [
+    {
+      "name": "Highly Optimized",
+      "progress": "verified",
+      "files": [
+        "challenge.yml",
+        "dist/highly-optimized",
+        "solve/solve.py",
+        "solve/writeup.md",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    },
+    {
+      "name": "Encrypted Flag",
+      "progress": "verified",
+      "files": [
+        "challenge.yml",
+        "dist/enc_flag.zip",
+        "solve/solve.py",
+        "solve/aes.py",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    },
+    {
+      "name": "what",
+      "progress": "verified",
+      "files": [
+        "chal.json",
+        "dist/what",
+        "solve/what_solve.py",
+        "solve/README.md",
+        "src/what.c",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    },
+    {
+      "name": "Doom-Ma-Geddon",
+      "progress": "verified",
+      "files": [
+        "info.yaml",
+        "static/doomageddon",
+        "src/doomageddon.c",
+        "src/solve.py",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    },
+    {
+      "name": "Frozen binary",
+      "progress": "verified",
+      "files": [
+        "info.yaml",
+        "static/frozenbinary.zip",
+        "flag.c",
+        "solve.md",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    },
+    {
+      "name": "powerpuff",
+      "progress": "verified",
+      "files": [
+        "info.yaml",
+        "static/challenge",
+        "src.c",
+        "solve.txt",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    },
+    {
+      "name": "cmsc351",
+      "progress": "verified",
+      "files": [
+        "challenge.yaml",
+        "cmsc351",
+        "flag.txt",
+        "solve.txt",
+        "src.c",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    },
+    {
+      "name": "deobfuscation",
+      "progress": "verified",
+      "files": [
+        "challenge.yaml",
+        "README.md",
+        "flag",
+        "src/flag.asm",
+        "src/solve.py",
+        "generated_solve.py",
+        "generated_codex_writeup.md",
+        "verify.sh",
+        "Dockerfile.verify"
+      ]
+    }
+  ]
+}
