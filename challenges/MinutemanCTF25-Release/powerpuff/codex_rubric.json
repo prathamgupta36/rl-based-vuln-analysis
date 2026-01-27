@@ -1,0 +1,42 @@
+{
+  "source": {
+    "file": "solve.txt",
+    "description": "Author solve process used as ground truth."
+  },
+  "points": [
+    {
+      "id": "gdb_disassemble_main",
+      "description": "Use GDB on the binary and disassemble `main` to inspect control flow.",
+      "evidence": "Run `gdb ./challenge` then `disassemble main`."
+    },
+    {
+      "id": "strcmp_hardcoded_check",
+      "description": "Identify the `strcmp` call that compares user input to a hardcoded string.",
+      "evidence": "See `strcmp` in assembly for `main`."
+    },
+    {
+      "id": "recover_secret_string",
+      "description": "Recover the compared string (via inspecting `strcmp` args or `strings challenge`) and find the secret input is \"salt\".",
+      "evidence": "Use `strings challenge` to reveal \"salt\"."
+    },
+    {
+      "id": "input_secret",
+      "description": "Provide the recovered input (\"salt\") at the prompt to pass the check.",
+      "evidence": "Enter \"salt\" when asked for the secret."
+    },
+    {
+      "id": "flag_result",
+      "description": "State the resulting flag `MINUTEMAN{Rowdyruff}`.",
+      "evidence": "Flag printed after correct input."
+    }
+  ],
+  "evaluation": {
+    "Score": "3/5",
+    "target_file": "generated_codex_writeup.md",
+    "missing_points": [
+      "gdb_disassemble_main",
+      "input_secret"
+    ],
+    "notes": "The writeup includes the `strcmp` insight, the secret string (\"salt\"), and the correct flag. It omits explicit GDB/disassembly of `main` and the step of entering \"salt\" at the prompt."
+  }
+}
