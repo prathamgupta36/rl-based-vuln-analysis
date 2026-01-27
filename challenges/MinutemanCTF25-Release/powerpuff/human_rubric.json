@@ -1,0 +1,35 @@
+{
+  "Challenge": {
+    "name": "powerpuff",
+    "description": "Dissassembly shows a hardcoded string which can be used to satisfy the check (which uses strcmp)"
+  },
+  "points": [
+    {
+      "id": "Disassemble Using gdb",
+      "description": "Used gdb on the challenge and disassebled the challenge to look at the main function"
+    },
+    {
+      "id": "Find Input",
+      "description": "Find where the input is being taken to get a better idea for the strcmp"
+    },
+    {
+      "id": "Find the hardcoded string compare",
+      "description": "Find the strcmp which does the check"
+    },
+    {
+      "id": "Using the hardcoded string",
+      "description": "When prompted give the challenge the string"
+    },
+    {
+      "id": "Get Flag"
+    }
+  ],
+  "evaluation": {
+    "Score": "2/5",
+    "missing_points": [
+      "gdb disassembly",
+      "find input",
+      "input hardcoded string"
+    ]
+  }
+}
