@@ -1,0 +1,28 @@
+{
+  "source": {
+    "file": "solve.md",
+    "description": "Author solve process used as ground truth."
+  },
+  "points": [
+    {
+      "id": "identify_skip_jump",
+      "description": "Identify the short `jmp` that skips the flag-generation call.",
+      "evidence": "solve.md: mentions the `jmp` that must be bypassed."
+    },
+    {
+      "id": "bypass_jump",
+      "description": "Bypass the jump by patching it to NOPs or by setting EIP/RIP after the jump in a debugger.",
+      "evidence": "solve.md: \"patch the jmp to nops\" or set EIP after it."
+    },
+    {
+      "id": "run_patched_binary",
+      "description": "Execute the patched flow to trigger flag generation and print the flag.",
+      "evidence": "solve.md implies running after bypassing the jump."
+    }
+  ],
+  "evaluation": {
+    "score": "3/3",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "The writeup clearly explains the short jump, patching to NOPs, and running the patched binary."
+  }
+}

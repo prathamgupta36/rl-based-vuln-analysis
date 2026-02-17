@@ -1,0 +1,28 @@
+{
+  "source": {
+    "file": "solve/solve.py",
+    "description": "Official solver script used as ground truth (no solve.md present)."
+  },
+  "points": [
+    {
+      "id": "extract_bytecode",
+      "description": "Extract the embedded bytecode/constants from the binary (as QWORDs).",
+      "evidence": "solve/solve.py parses a hex blob into `struct.unpack('265Q', data)`."
+    },
+    {
+      "id": "identify_dividend_divisor_layout",
+      "description": "Determine the fixed offsets for dividend and divisor within each per-character block.",
+      "evidence": "solve/solve.py uses `i+1` and `i+3` within 12-QWORD blocks."
+    },
+    {
+      "id": "compute_remainders",
+      "description": "Compute `dividend % divisor` for each block and join the chars to form the flag.",
+      "evidence": "solve/solve.py computes remainders and builds the flag string."
+    }
+  ],
+  "evaluation": {
+    "score": "3/3",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "The writeup covers bytecode extraction, layout, and modulo reconstruction."
+  }
+}

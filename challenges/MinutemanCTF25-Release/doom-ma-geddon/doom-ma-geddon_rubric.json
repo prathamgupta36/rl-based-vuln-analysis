@@ -1,0 +1,28 @@
+{
+  "source": {
+    "file": "src/solve.py",
+    "description": "Official solver script used as ground truth (no solve.md present)."
+  },
+  "points": [
+    {
+      "id": "symbolic_stdin",
+      "description": "Model stdin as 50 symbolic bytes for the binary.",
+      "evidence": "src/solve.py: creates 50 symbolic bytes and uses them as stdin."
+    },
+    {
+      "id": "find_win_avoid_lose",
+      "description": "Symbolically explore to reach the win address while avoiding the lose address.",
+      "evidence": "src/solve.py: `explore(find=0x4031b8, avoid=0x4031c9)`."
+    },
+    {
+      "id": "extract_flag",
+      "description": "Extract the concrete model for stdin to recover the flag bytes.",
+      "evidence": "src/solve.py evaluates the symbolic flag and prints it."
+    }
+  ],
+  "evaluation": {
+    "score": "3/3",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "The writeup includes symbolic stdin, win/lose addresses, and model extraction."
+  }
+}

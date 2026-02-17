@@ -1,0 +1,28 @@
+{
+  "source": {
+    "file": "solve.txt",
+    "description": "Author solve process used as ground truth."
+  },
+  "points": [
+    {
+      "id": "strcmp_hardcoded_check",
+      "description": "Identify the `strcmp` in `main` that compares user input to a hardcoded string.",
+      "evidence": "solve.txt: disassemble `main` and observe `strcmp` against a hardcoded string."
+    },
+    {
+      "id": "recover_secret_string",
+      "description": "Recover the compared string (e.g., via inspecting `strcmp` args or `strings`) and determine the input is \"salt\".",
+      "evidence": "solve.txt: `strings challenge` reveals \"salt\"."
+    },
+    {
+      "id": "input_secret_get_flag",
+      "description": "Provide the recovered input (\"salt\") to pass the check and obtain the flag.",
+      "evidence": "solve.txt: inputting \"salt\" yields the flag."
+    }
+  ],
+  "evaluation": {
+    "score": "2/3",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "The writeup covers the `strcmp` check and the secret input \"salt\", but it does not explicitly mention entering \"salt\" at the prompt."
+  }
+}

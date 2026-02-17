@@ -1,0 +1,33 @@
+{
+  "source": {
+    "file": "solve/solve.py",
+    "description": "Official solver script used as ground truth (no solve.md present)."
+  },
+  "points": [
+    {
+      "id": "parse_custom_sbox",
+      "description": "Parse the first 256 bytes of `flag.enc` as the custom AES S-box.",
+      "evidence": "solve/solve.py reads 256 bytes and sets `aes.s_box`."
+    },
+    {
+      "id": "reverse_sbox_insertion",
+      "description": "Invert the linear-probing insertion to constrain RNG byte choices for each S-box entry.",
+      "evidence": "solve/solve.py\u2019s `checkPossible` and `randStates` construction."
+    },
+    {
+      "id": "recover_rng_states_and_key",
+      "description": "Use the RNG recurrence to recover states 64 and 65 and form AES key candidates.",
+      "evidence": "solve/solve.py advances states and builds `key = a.to_bytes(8, 'little') + b.to_bytes(8, 'little')`."
+    },
+    {
+      "id": "decrypt_and_find_flag",
+      "description": "Decrypt with key candidates and validate by the `uoftctf` prefix to recover the flag.",
+      "evidence": "solve/solve.py checks decrypted block starts with `uoftctf` and prints plaintext."
+    }
+  ],
+  "evaluation": {
+    "score": "4/4",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "All critical steps from the solve script are reflected in the writeup."
+  }
+}

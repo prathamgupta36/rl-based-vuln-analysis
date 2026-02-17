@@ -1,0 +1,23 @@
+{
+  "source": {
+    "file": "solve.txt",
+    "description": "Provided solution string used as ground truth (no solve.md present)."
+  },
+  "points": [
+    {
+      "id": "find_choice_sequence",
+      "description": "Find a `t`/`s` sequence that reaches the success base case.",
+      "evidence": "solve.txt provides the final sequence: `ttstttsssssttsssttt`."
+    },
+    {
+      "id": "use_sequence_to_get_flag",
+      "description": "Use the sequence as input to print the flag.",
+      "evidence": "solve.txt is the input used by the solver to run the binary."
+    }
+  ],
+  "evaluation": {
+    "score": "2/2",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "The writeup explains deriving and using the sequence to get the flag."
+  }
+}

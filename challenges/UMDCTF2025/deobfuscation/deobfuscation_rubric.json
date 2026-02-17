@@ -1,0 +1,23 @@
+{
+  "source": {
+    "file": "src/solve.py",
+    "description": "Official solver script used as ground truth (no solve.md present)."
+  },
+  "points": [
+    {
+      "id": "extract_arrays",
+      "description": "Extract `encrypted_flag` and `key_bytes` arrays from the assembly/solver.",
+      "evidence": "src/solve.py defines both arrays."
+    },
+    {
+      "id": "xor_decrypt",
+      "description": "XOR corresponding bytes to recover the plaintext flag.",
+      "evidence": "src/solve.py computes `''.join(chr(e ^ k) for e, k in zip(...))`."
+    }
+  ],
+  "evaluation": {
+    "score": "2/2",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "The writeup matches the XOR-based decryption exactly."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "source": {
+    "file": "solve/README.md",
+    "description": "Author writeup with solver script used as ground truth."
+  },
+  "points": [
+    {
+      "id": "vm_ops_and_key",
+      "description": "Identify VM ops (`W`, `H`, `A`, `T`) and the repeating key \"WHAT\".",
+      "evidence": "solve/README.md script uses `n = ['W','H','A','T']` and applies W/H/A operations."
+    },
+    {
+      "id": "reverse_with_key_index",
+      "description": "Reverse each segment\u2019s operations with the correct rolling key index to recover plaintext characters.",
+      "evidence": "solve/README.md maintains `total_idx` and inverts ops in reverse order."
+    },
+    {
+      "id": "reconstruct_flag",
+      "description": "Apply inversion to all segments to recover the full flag.",
+      "evidence": "solve/README.md accumulates `solve += chr(solution)`."
+    }
+  ],
+  "evaluation": {
+    "score": "3/3",
+    "target_file": "generated_codex_writeup.md",
+    "notes": "The writeup captures VM semantics, key indexing, inversion, and reconstruction."
+  }
+}
